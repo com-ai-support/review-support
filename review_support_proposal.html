@@ -909,6 +909,93 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* ── HERO FREE BANNER ── */
+.hero-free-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.05) 100%);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hero-free-icon { font-size: 18px; }
+.hero-free-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  flex: 1;
+}
+.hero-free-text em { font-style: normal; color: var(--gold); }
+.hero-free-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--gold);
+  color: var(--black);
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ── BEFORE AFTER ── */
+.before-after {
+  padding: 40px 32px;
+  border-bottom: 1px solid var(--border);
+}
+.ba-grid {
+  display: flex;
+  gap: 16px;
+}
+.ba-item {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.ba-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.ba-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.ba-before, .ba-after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.ba-num {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.ba-before .ba-num { color: #888; }
+.ba-after .ba-num { color: var(--gold-light); }
+.ba-num small { font-size: 16px; font-weight: 400; }
+.ba-tag {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+}
+.ba-tag.before { background: rgba(255,255,255,0.08); color: #888; }
+.ba-tag.after { background: rgba(201,168,76,0.2); color: var(--gold); }
+.ba-arrow { font-size: 20px; color: var(--gold); }
 </style>
 </head>
 <body>
@@ -924,6 +1011,11 @@ body {
     返信がないレビューは、次の来店を止めています。<br>
     AIを使った返信サポートで、手間なく・早く・丁寧に対応できます。
   </p>
+  <div class="hero-free-banner">
+    <span class="hero-free-icon">🎁</span>
+    <span class="hero-free-text">口コミ返信3件 <em>無料作成中</em></span>
+    <span class="hero-free-badge">期間限定｜モニター募集中</span>
+  </div>
   <div class="hero-stats">
     <div class="hero-stat">
       <span class="hero-stat-num">90<small>%</small></span>
@@ -985,15 +1077,38 @@ body {
   </p>
 </div>
 
+<!-- BEFORE AFTER -->
+<div class="before-after">
+  <p class="section-label">導入するとどう変わるか</p>
+  <div class="ba-grid">
+    <div class="ba-item">
+      <p class="ba-label">返信作成時間</p>
+      <div class="ba-flow">
+        <div class="ba-before"><span class="ba-num">10<small>分</small></span><span class="ba-tag before">導入前</span></div>
+        <div class="ba-arrow">↓</div>
+        <div class="ba-after"><span class="ba-num">30<small>秒</small></span><span class="ba-tag after">導入後</span></div>
+      </div>
+    </div>
+    <div class="ba-item">
+      <p class="ba-label">口コミ返信率</p>
+      <div class="ba-flow">
+        <div class="ba-before"><span class="ba-num">0<small>%</small></span><span class="ba-tag before">導入前</span></div>
+        <div class="ba-arrow">↓</div>
+        <div class="ba-after"><span class="ba-num">100<small>%</small></span><span class="ba-tag after">導入後</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SOLUTION -->
 <div class="solution">
-  <h2 class="solution-title"><em>AI</em>が返信文を作り、<br>お客様はコピーして貼るだけ。</h2>
+  <h2 class="solution-title"><em>店舗専用AI</em>が返信文を作り、<br>お客様はコピーして貼るだけ。</h2>
   <p class="solution-desc">
     口コミの内容・星の数・店舗の雰囲気に合わせて、自然な返信文を生成します。<br>
     修正不要なレベルの文章をお届けします。
   </p>
   <div class="solution-note">
-    💡 店舗の雰囲気・口コミ内容・星評価に合わせて文章を生成するため、不自然なテンプレ返信になりません。
+    💡 飲食店・カフェ・美容室など業種別に調整した返信文を生成。店舗の雰囲気・口コミ内容・星評価に合わせるため、不自然なテンプレ返信になりません。
   </div>
   <div class="flow">
     <div class="flow-step">
@@ -1243,8 +1358,8 @@ body {
 <!-- CONTACT -->
 <div class="contact">
   <div class="contact-cta-banner">
-    <p class="contact-cta-text">まずは口コミ3件を<em>無料で作成します</em></p>
-    <p class="contact-cta-sub">費用・契約は一切不要。お気軽にどうぞ。</p>
+    <p class="contact-cta-text">まずは口コミを<em>1件送ってください。</em></p>
+    <p class="contact-cta-sub">無料で返信文を作成します。費用・契約は一切不要です。</p>
   </div>
   <h2 class="contact-heading">お問い合わせ</h2>
   <p class="contact-sub">
